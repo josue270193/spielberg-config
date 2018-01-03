@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: @project.mode@
+# CONFIGURACION DE LOS HTTP encoding
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+# PARA LA INTERNALIZACION
+  messages:
+    basename: messages
+    cache-duration: -1
+    encoding: UTF-8
+# DEVTOOLS
+  devtools:
+    restart:
+      additional-paths: .
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+# CONFIGURACION DE EUREKA
+
+# CONFIGURACION ARCHIVO LOG
+logging:
+  path: C:/APP/Logs/ET
+  config: http://localhost:8888/ET/default/master/ETLogback.xml
+
+# ACTUATOR
+management:
+  endpoints:
+    enabled-by-default: true
+
+# PROPERTIES CUSTOM
+prefix-api: /api

@@ -1,0 +1,60 @@
+spring:
+  profiles:
+    active: @project.mode@
+# CONFIGURACION DE LOS HTTP encoding
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+# PARA LA INTERNALIZACION
+  messages:
+    basename: messages
+    cache-duration: -1
+    encoding: UTF-8
+# DEVTOOLS
+  devtools:
+    restart:
+      additional-paths: .
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+# PARA H2
+  datasource:
+    url: jdbc:h2:file:~/ETH2
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+    platform: h2
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: true
+# CONFIGURACION DE EUREKA
+
+# CONFIGURACION ARCHIVO LOG
+logging:
+  path: C:/APP/Logs/ETH2
+  config: http://localhost:8888/ETH2/default/master/ETH2Logback.xml
+
+# ACTUATOR
+management:
+  endpoints:
+    enabled-by-default: true
+
+# PROPERTIES CUSTOM
+prefix-api: /api
