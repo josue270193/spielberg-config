@@ -1,3 +1,6 @@
+server:
+  port: 9081
+
 spring:
 # CONFIGURACION DE LOS HTTP encoding
   http:
